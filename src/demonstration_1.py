@@ -22,4 +22,20 @@ There is no index that satisfies the conditions in the problem statement.
 """
 def pivot_index(nums):
     # Your code here
+    total = sum(nums)
+    running = 0
 
+    for i, num in enumerate(nums): 
+        total -= num
+
+        if total == running:
+            return i
+        
+        running += num
+
+    
+    return -1
+
+# nums = [1, 7, 3, 6, 5, 6]
+nums = [1, 2, 3]
+print(pivot_index(nums))
